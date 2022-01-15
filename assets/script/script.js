@@ -79,3 +79,27 @@ const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
     
     
+const startButton = document.getElementById('start-btn');
+
+startButton.addEventListener("click", startQuiz);
+
+// start the quiz
+function startQuiz(){
+    var start = document.getElementById('start')
+    start.classList.add("hidden");
+    var quiz = document.getElementById('quiz')
+    quiz.classList.remove("hidden");
+    showQuestion(questionIndex);
+}
+
+function showQuestion(index) {
+    var question = document.getElementById('question')
+    var answer1 = document.getElementById('answer1')
+    var answer2 = document.getElementById('answer2')
+    var answer3 = document.getElementById('answer3')
+
+    question.textContent = questions[index].question
+    answer1.textContent = questions[index].answers.a
+    answer2.textContent = questions[index].answers.b
+    answer3.textContent = questions[index].answers.c
+}
