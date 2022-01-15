@@ -8,7 +8,21 @@
     <title>Code-Quiz</title>
 </head>
 <body>
-    <div id="quiz"></div>
-    <button id="submit">Submit Quiz</button>
+    <div class="top"> 
+        <div id="score">View High Scores</div>
+        <div id="time"> Time: </div>
+    </div>
+    <div id="start">
+        <h2>Coding Quiz Challenge</h2>
+        <p>Test your JavaScript knowledge with these 8 questions on Javascript fundamentals.</p>
+        <button class="btn" id="start-btn">Start Quiz</button>
+    </div>
+    <div id="quiz" class="hidden">
+        <p id="question"></p>
+        <button class="btn" id="answer1" onclick="submitAnswer(this)"></button>
+        <button class="btn" id="answer2" onclick="submitAnswer(this)"></button>
+        <button class="btn" id="answer3" onclick="submitAnswer(this)"></button>
+    </div>
     <div id="results"></div>
+    <script src="assets/script/script.js"></script>
 </body>
