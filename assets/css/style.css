@@ -1,15 +1,4 @@
-.quiz-info {
-    padding: 40px;
-    margin-left: 10px;
-    margin-right: 10px;
-    display: flex;
-    justify-content: space-between;
-}
 
-.quiz-info p {
-    color: #7ede92;
-    font-size: 22px;
-}
 
 body {
     background-color: aliceblue;
