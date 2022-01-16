@@ -111,10 +111,15 @@ function submitAnswer(button){
       var correctAnswerKey = questions[questionIndex].correctAnswer
       var correctAnswerValue = questions[questionIndex].answers[correctAnswerKey]
       if (answerSelected === correctAnswerValue){
-          alert("correct");
+          var correct = document.createElement("p");
+          correct.textContent = "Correct!";
+          document.body.appendChild(correct);
+          
       } else {
           //return false and show correct answer
-          alert("wrongo!");
+          var incorrect = document.createElement("p");
+          incorrect.textContent = "Wrong";
+          document.body.appendChild(incorrect);
       }
 }
 
