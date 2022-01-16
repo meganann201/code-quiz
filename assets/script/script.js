@@ -110,16 +110,18 @@ function submitAnswer(button){
       var answerSelected = button.textContent
       var correctAnswerKey = questions[questionIndex].correctAnswer
       var correctAnswerValue = questions[questionIndex].answers[correctAnswerKey]
+      var contentDiv = document.getElementById('content');
       if (answerSelected === correctAnswerValue){
           var correct = document.createElement("p");
           correct.textContent = "Correct!";
-          document.body.appendChild(correct);
-          
+          contentDiv.appendChild(correct);
+          score++;
       } else {
           //return false and show correct answer
           var incorrect = document.createElement("p");
-          incorrect.textContent = "Wrong";
+          incorrect.textContent = "Wrong! Correct answer is " + correctAnswerValue ;
           document.body.appendChild(incorrect);
+          contentDiv.appendChild(incorrect);
       }
 }
 

@@ -10,8 +10,11 @@ body {
     justify-content: space-between ;
 }
 
-#start {
+.content {
     margin-left: 30%;
+}
+
+#start {
     margin-top: 60px;
 }
 
@@ -31,4 +34,8 @@ body {
     display: none;
 }
 
+#quiz {
+    margin-top: 60px;
+    font-size: 26px;
+}
 
