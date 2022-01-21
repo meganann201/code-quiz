@@ -85,6 +85,7 @@ const initialInput = document.getElementById('initialInput');
 const submitInitialsBtn = document.getElementById('submitInitialsBtn');
 var viewHighScore = document.getElementById("viewHighScore");
 var listOfHighScores = document.getElementById("listOfHighScores");
+var highScoreSection = document.getElementById("highScoreSection");
 
 startButton.addEventListener("click", startQuiz);
 
@@ -158,6 +159,7 @@ function submitAnswer(button){
       questionIndex++;
       showQuestion(questionIndex)
       resultsContainer.classList.remove("hidden");
+}   
 // store high score and initials to local storage
    var saveHighScore = function(event) {
        event.preventDefault();
@@ -191,6 +193,24 @@ function submitAnswer(button){
     
     showHighScores();
   };
+  // function to display all high scores
+  var i = 0;
+  function showHighScores() {
+    resultsContainer.classList.add("hidden");
+    timer.classList.add("hidden");
+    highScoreSection.classList.remove("hidden");
+
+    if (savedHighScores === null) {
+        return;
+    }
+
+    var savedHighScores = localStorage.getItem("highscore");
+    var storedHighScores = JSON.parse(savedHighScores);
+    for (; i < storedHighScores.length; i++) {
+        var eachNewHighScore = document.createElement("p");
+        eachNewHighScore.innerHTML = storedHighScores[i].initials + ": " + storedHighScores[i].score;
+        listOfHighScores.appendChild(eachNewHighScore);
+    }
 }
 
   
