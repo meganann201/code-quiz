@@ -102,6 +102,27 @@ function showQuestion(index) {
     answer1.textContent = questions[index].answers.a
     answer2.textContent = questions[index].answers.b
     answer3.textContent = questions[index].answers.c
+    if( index > questions.length - 1){
+        clearInterval(intervalId);
+        quizContainer.classList.add("hidden");
+        resultsText.textContent = ("Quiz Complete. Your score is " + score);
+        initialInput.classList.remove("hidden");
+        timer.classList.add("hidden");
+       
+       
+    } else {
+        resultsContainer.classList.add("hidden");
+        initialInput.classList.add("hidden");
+        var question = document.getElementById('question')
+        var answer1 = document.getElementById('answer1')
+        var answer2 = document.getElementById('answer2')
+        var answer3 = document.getElementById('answer3')
+    
+        question.textContent = questions[index].question
+        answer1.textContent = questions[index].answers.a
+        answer2.textContent = questions[index].answers.b
+        answer3.textContent = questions[index].answers.c
+    }  
 }
 
 function submitAnswer(button){
