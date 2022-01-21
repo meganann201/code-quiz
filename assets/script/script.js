@@ -76,7 +76,10 @@ var questions = [
 ]
 var score = 0;
 var questionIndex = 0;
+var time = 180;
+var intervalId = 180;
 var initialsElement = document.getElementById('initials');
+
 //selecting the HTML elements
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
@@ -92,6 +95,7 @@ var goBackBtn = document.getElementById("goBackBtn");
 var listOfHighScores = document.getElementById("listOfHighScores");
 var start = document.getElementById("start");
 
+// starts the quiz when start button clicked by calling startQuiz function
 startButton.addEventListener("click", startQuiz);
 
 // start the quiz
