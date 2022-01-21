@@ -11,6 +11,7 @@
     <div class="top"> 
         <div id="score">View High Scores</div>
         <div id="time"> Time: </div>
+        <a href="#" id="viewHighScore">View High Scores</a>
     </div>
     <div class="content" id="content">
         <div id="start">
@@ -25,6 +26,25 @@
             <button class="btn" id="answer3" onclick="submitAnswer(this)"></button>
         </div>
         <div id="results"></div>
+        <div id="results" class="hidden">
+            <p id="resultsText"></p> 
+            <div id="initialInput" class="hidden">
+                <form action="">
+                    <p>Enter your initials:</p>
+                    <input type="text" id="initials">
+                    <button type="submit" class="btn" id="submitInitialsBtn">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div id="highScoreSection" class="hidden">
+            <h2>High Scores</h2>  
+            <div id="listOfHighScores"></div>
+            <p>
+                <button type="submit" class="btn" id="goBackBtn">Go Back</button>
+                <button type="submit" class="btn" id="clearHighScoreBtn">Clear High Scores</button>
+            </p>
+         
+        </div>
     </div>
     <script src="assets/script/script.js"></script>
 </body>
