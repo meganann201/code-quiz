@@ -114,16 +114,8 @@ function startQuiz(){
     
 }
 
+// show question 
 function showQuestion(index) {
-    var question = document.getElementById('question')
-    var answer1 = document.getElementById('answer1')
-    var answer2 = document.getElementById('answer2')
-    var answer3 = document.getElementById('answer3')
-
-    question.textContent = questions[index].question
-    answer1.textContent = questions[index].answers.a
-    answer2.textContent = questions[index].answers.b
-    answer3.textContent = questions[index].answers.c
     if( index > questions.length - 1){
         clearInterval(intervalId);
         quizContainer.classList.add("hidden");
@@ -148,26 +140,18 @@ function showQuestion(index) {
 }
 
 function submitAnswer(button){
-    console.log(button.textContent);
+    
      // if else statement for if button clicked = correct answer 
       var answerSelected = button.textContent
       var correctAnswerKey = questions[questionIndex].correctAnswer
       var correctAnswerValue = questions[questionIndex].answers[correctAnswerKey]
-      var contentDiv = document.getElementById('content');
-      if (answerSelected === correctAnswerValue){
-          var correct = document.createElement("p");
-          correct.textContent = "Correct!";
-          contentDiv.appendChild(correct);
-          score++;
+     // var contentDiv = document.getElementById('content');
+      
+     
      if (answerSelected === correctAnswerValue){
         resultsText.textContent = "Correct!";
         score++;
       } else {
-          //return false and show correct answer
-          var incorrect = document.createElement("p");
-          incorrect.textContent = "Wrong! Correct answer is " + correctAnswerValue ;
-          document.body.appendChild(incorrect);
-          contentDiv.appendChild(incorrect);
         //return false and show correct answer
         resultsText.textContent = "Wrong! Correct answer is " + correctAnswerValue ;
         time = time - 25;
