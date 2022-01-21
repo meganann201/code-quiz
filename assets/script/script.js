@@ -86,6 +86,7 @@ const initialInput = document.getElementById('initialInput');
 const submitInitialsBtn = document.getElementById('submitInitialsBtn');
 var viewHighScore = document.getElementById("viewHighScore");
 var listOfHighScores = document.getElementById("listOfHighScores");
+var timer = document.getElementById("timer");
 var highScoreSection = document.getElementById("highScoreSection");
 var goBackBtn = document.getElementById("goBackBtn");
 var listOfHighScores = document.getElementById("listOfHighScores");
@@ -236,5 +237,27 @@ function submitAnswer(button){
         localStorage.removeItem("highscore");
         listOfHighScores.innerHTML = "High Scores Cleared!";
     });
+    
   
+// timer funtion
+  function quizTimer() {
+   intervalId = setInterval(updateCountdown, 1000);
+  }
 
+  function updateCountdown() {
+    const countdownEl = document.getElementById('time');
+    const minutes = Math.floor(time / 60);
+    var seconds = time % 60;
+
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    countdownEl.innerHTML = `${minutes}:${seconds}`;
+    if (time > 0) {
+        time--;
+    } else {
+        countdownEl.innerHTML = "Time's Up";
+    }
+   }
+
+ 
+
+  
