@@ -159,6 +159,7 @@ function submitAnswer(button){
       questionIndex++;
       showQuestion(questionIndex)
       resultsContainer.classList.remove("hidden");
+      
 }   
 // store high score and initials to local storage
    var saveHighScore = function(event) {
@@ -193,6 +194,7 @@ function submitAnswer(button){
     
     showHighScores();
   };
+
   // function to display all high scores
   var i = 0;
   function showHighScores() {
