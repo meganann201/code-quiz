@@ -150,6 +150,9 @@ function submitAnswer(button){
         resultsText.textContent = "Wrong! Correct answer is " + correctAnswerValue ;
         time = time - 25;
       }
+      questionIndex++;
+      showQuestion(questionIndex)
+      resultsContainer.classList.remove("hidden");
 }
 
   
