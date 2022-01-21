@@ -76,6 +76,7 @@ var questions = [
 ]
 var score = 0;
 var questionIndex = 0;
+var initialsElement = document.getElementById('initials');
 //selecting the HTML elements
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
@@ -86,6 +87,9 @@ const submitInitialsBtn = document.getElementById('submitInitialsBtn');
 var viewHighScore = document.getElementById("viewHighScore");
 var listOfHighScores = document.getElementById("listOfHighScores");
 var highScoreSection = document.getElementById("highScoreSection");
+var goBackBtn = document.getElementById("goBackBtn");
+var listOfHighScores = document.getElementById("listOfHighScores");
+var start = document.getElementById("start");
 
 startButton.addEventListener("click", startQuiz);
 
@@ -212,6 +216,25 @@ function submitAnswer(button){
         listOfHighScores.appendChild(eachNewHighScore);
     }
 }
+  
+    submitInitialsBtn.addEventListener("click", function(event){ 
+        saveHighScore(event);
+    });
 
+    viewHighScore.addEventListener("click", function(event) { 
+        showHighScores(event);
+    });
+// event listener on go back button to go back to content div on click
+    goBackBtn.addEventListener("click", function() {
+        highScoreSection.classList.add("hidden");
+        resultsContainer.classList.add("hidden");
+        start.classList.remove("hidden");
+    });
+
+    // event listener on clear high score button - clears the high scores 
+    clearHighScoreBtn.addEventListener("click", function(){
+        localStorage.removeItem("highscore");
+        listOfHighScores.innerHTML = "High Scores Cleared!";
+    });
   
 
