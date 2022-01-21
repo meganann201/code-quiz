@@ -153,6 +153,39 @@ function submitAnswer(button){
       questionIndex++;
       showQuestion(questionIndex)
       resultsContainer.classList.remove("hidden");
+// store high score and initials to local storage
+   var saveHighScore = function(event) {
+       event.preventDefault();
+       // player must enter password
+       if (initialsElement.value === "") {
+        alert("Please enter your initials!");
+        return;
+    } 
+    quizContainer.classList.add("hidden");
+        timer.classList.add("hidden");
+        highScoreSection.classList.remove("hidden");
+
+        var savedHighScores = localStorage.getItem("highscore");
+        var scoresArray;
+    
+        if (savedHighScores === null) {
+            scoresArray = [];
+        } else {
+            scoresArray = JSON.parse(savedHighScores)
+        }
+
+    var playerScore = 
+    {
+       "score": score,
+       "initials": initialsElement.value
+    }
+    scoresArray.push(playerScore);
+
+    var scoresArrayString = JSON.stringify(scoresArray);
+    localStorage.setItem('highscore', scoresArrayString);
+    
+    showHighScores();
+  };
 }
 
   
