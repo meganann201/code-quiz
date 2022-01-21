@@ -98,9 +98,9 @@ var start = document.getElementById("start");
 // starts the quiz when start button clicked by calling startQuiz function
 startButton.addEventListener("click", startQuiz);
 
+
 // start the quiz
 function startQuiz(){
-    var start = document.getElementById('start')
     questionIndex = 0;
     score = 0
     time = 180
@@ -111,6 +111,7 @@ function startQuiz(){
     var quiz = document.getElementById('quiz')
     quiz.classList.remove("hidden");
     showQuestion(questionIndex);
+    
 }
 
 function showQuestion(index) {
