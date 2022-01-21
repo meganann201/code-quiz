@@ -80,6 +80,11 @@ var questionIndex = 0;
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const startButton = document.getElementById('start-btn');
+const resultsText = document.getElementById('resultsText');
+const initialInput = document.getElementById('initialInput');
+const submitInitialsBtn = document.getElementById('submitInitialsBtn');
+var viewHighScore = document.getElementById("viewHighScore");
+var listOfHighScores = document.getElementById("listOfHighScores");
 
 startButton.addEventListener("click", startQuiz);
 
