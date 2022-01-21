@@ -137,12 +137,18 @@ function submitAnswer(button){
           correct.textContent = "Correct!";
           contentDiv.appendChild(correct);
           score++;
+     if (answerSelected === correctAnswerValue){
+        resultsText.textContent = "Correct!";
+        score++;
       } else {
           //return false and show correct answer
           var incorrect = document.createElement("p");
           incorrect.textContent = "Wrong! Correct answer is " + correctAnswerValue ;
           document.body.appendChild(incorrect);
           contentDiv.appendChild(incorrect);
+        //return false and show correct answer
+        resultsText.textContent = "Wrong! Correct answer is " + correctAnswerValue ;
+        time = time - 25;
       }
 }
 
